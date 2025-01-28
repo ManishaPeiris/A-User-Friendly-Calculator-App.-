@@ -1,0 +1,37 @@
+<Calculator>:
+    orientation: "vertical"
+    padding: 20
+    spacing: 10
+
+    TextInput:
+        id: num1_input
+        hint_text: "Enter first number"
+        multiline: False
+        input_filter: "float"  # Allow only numeric input
+
+    TextInput:
+        id: num2_input
+        hint_text: "Enter second number"
+        multiline: False
+        input_filter: "float"
+
+    BoxLayout:
+        spacing: 10
+        Button:
+            text: "Add"
+            on_press: root.calculate("add")
+        Button:
+            text: "Subtract"
+            on_press: root.calculate("subtract")
+        Button:
+            text: "Multiply"
+            on_press: root.calculate("multiply")
+        Button:
+            text: "Divide"
+            on_press: root.calculate("divide")
+
+    Label:
+        id: result_label
+        text: "Result: "
+        size_hint_y: None
+        height: 40
